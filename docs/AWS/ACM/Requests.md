@@ -3,7 +3,7 @@
 #### `addTagsToCertificate`
 
 ``` purescript
-addTagsToCertificate :: forall eff. Service -> AddTagsToCertificateRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+addTagsToCertificate :: forall eff. Service -> AddTagsToCertificateRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Adds one or more tags to an ACM Certificate. Tags are labels that you can use to identify and organize your AWS resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. </p> <p>You can apply a tag to just one certificate if you want to identify a specific characteristic of that certificate, or you can apply the same tag to multiple certificates if you want to filter for a common relationship among those certificates. Similarly, you can apply the same tag to multiple resources if you want to specify a relationship among those resources. For example, you can add the same tag to an ACM Certificate and an Elastic Load Balancing load balancer to indicate that they are both used by the same website. For more information, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/tags.html">Tagging ACM Certificates</a>. </p> <p>To remove one or more tags, use the <a>RemoveTagsFromCertificate</a> action. To view all of the tags that have been applied to the certificate, use the <a>ListTagsForCertificate</a> action. </p>
@@ -11,7 +11,7 @@ addTagsToCertificate :: forall eff. Service -> AddTagsToCertificateRequest -> Af
 #### `deleteCertificate`
 
 ``` purescript
-deleteCertificate :: forall eff. Service -> DeleteCertificateRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+deleteCertificate :: forall eff. Service -> DeleteCertificateRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Deletes a certificate and its associated private key. If this action succeeds, the certificate no longer appears in the list that can be displayed by calling the <a>ListCertificates</a> action or be retrieved by calling the <a>GetCertificate</a> action. The certificate will not be available for use by AWS services integrated with ACM. </p> <note> <p>You cannot delete an ACM Certificate that is being used by another AWS service. To delete a certificate that is in use, the certificate association must first be removed.</p> </note>
@@ -59,7 +59,7 @@ listTagsForCertificate :: forall eff. Service -> ListTagsForCertificateRequest -
 #### `removeTagsFromCertificate`
 
 ``` purescript
-removeTagsFromCertificate :: forall eff. Service -> RemoveTagsFromCertificateRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+removeTagsFromCertificate :: forall eff. Service -> RemoveTagsFromCertificateRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Remove one or more tags from an ACM Certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. </p> <p>To add tags to a certificate, use the <a>AddTagsToCertificate</a> action. To view all of the tags that have been applied to a specific ACM Certificate, use the <a>ListTagsForCertificate</a> action. </p>
@@ -75,7 +75,7 @@ requestCertificate :: forall eff. Service -> RequestCertificateRequest -> Aff (e
 #### `resendValidationEmail`
 
 ``` purescript
-resendValidationEmail :: forall eff. Service -> ResendValidationEmailRequest -> Aff (exception :: EXCEPTION | eff) NoOutput
+resendValidationEmail :: forall eff. Service -> ResendValidationEmailRequest -> Aff (exception :: EXCEPTION | eff) Unit
 ```
 
 <p>Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM Certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM Certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. For more information about setting up your contact email addresses, see <a href="http://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>

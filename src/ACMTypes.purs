@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -86,29 +85,29 @@ instance encodeCertificateChainBlob :: Encode CertificateChainBlob where encode 
 
 -- | <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. </p>
 newtype CertificateDetail = CertificateDetail 
-  { "CertificateArn" :: NullOrUndefined (Arn)
-  , "DomainName" :: NullOrUndefined (DomainNameString)
-  , "SubjectAlternativeNames" :: NullOrUndefined (DomainList)
-  , "DomainValidationOptions" :: NullOrUndefined (DomainValidationList)
-  , "Serial" :: NullOrUndefined (String)
-  , "Subject" :: NullOrUndefined (String)
-  , "Issuer" :: NullOrUndefined (String)
-  , "CreatedAt" :: NullOrUndefined (TStamp)
-  , "IssuedAt" :: NullOrUndefined (TStamp)
-  , "ImportedAt" :: NullOrUndefined (TStamp)
-  , "Status" :: NullOrUndefined (CertificateStatus)
-  , "RevokedAt" :: NullOrUndefined (TStamp)
-  , "RevocationReason" :: NullOrUndefined (RevocationReason)
-  , "NotBefore" :: NullOrUndefined (TStamp)
-  , "NotAfter" :: NullOrUndefined (TStamp)
-  , "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm)
-  , "SignatureAlgorithm" :: NullOrUndefined (String)
-  , "InUseBy" :: NullOrUndefined (InUseList)
-  , "FailureReason" :: NullOrUndefined (FailureReason)
-  , "Type" :: NullOrUndefined (CertificateType)
-  , "RenewalSummary" :: NullOrUndefined (RenewalSummary)
-  , "KeyUsages" :: NullOrUndefined (KeyUsageList)
-  , "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList)
+  { "CertificateArn" :: Maybe (Arn)
+  , "DomainName" :: Maybe (DomainNameString)
+  , "SubjectAlternativeNames" :: Maybe (DomainList)
+  , "DomainValidationOptions" :: Maybe (DomainValidationList)
+  , "Serial" :: Maybe (String)
+  , "Subject" :: Maybe (String)
+  , "Issuer" :: Maybe (String)
+  , "CreatedAt" :: Maybe (TStamp)
+  , "IssuedAt" :: Maybe (TStamp)
+  , "ImportedAt" :: Maybe (TStamp)
+  , "Status" :: Maybe (CertificateStatus)
+  , "RevokedAt" :: Maybe (TStamp)
+  , "RevocationReason" :: Maybe (RevocationReason)
+  , "NotBefore" :: Maybe (TStamp)
+  , "NotAfter" :: Maybe (TStamp)
+  , "KeyAlgorithm" :: Maybe (KeyAlgorithm)
+  , "SignatureAlgorithm" :: Maybe (String)
+  , "InUseBy" :: Maybe (InUseList)
+  , "FailureReason" :: Maybe (FailureReason)
+  , "Type" :: Maybe (CertificateType)
+  , "RenewalSummary" :: Maybe (RenewalSummary)
+  , "KeyUsages" :: Maybe (KeyUsageList)
+  , "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList)
   }
 derive instance newtypeCertificateDetail :: Newtype CertificateDetail _
 derive instance repGenericCertificateDetail :: Generic CertificateDetail _
@@ -118,12 +117,12 @@ instance encodeCertificateDetail :: Encode CertificateDetail where encode = gene
 
 -- | Constructs CertificateDetail from required parameters
 newCertificateDetail :: CertificateDetail
-newCertificateDetail  = CertificateDetail { "CertificateArn": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DomainName": (NullOrUndefined Nothing), "DomainValidationOptions": (NullOrUndefined Nothing), "ExtendedKeyUsages": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "ImportedAt": (NullOrUndefined Nothing), "InUseBy": (NullOrUndefined Nothing), "IssuedAt": (NullOrUndefined Nothing), "Issuer": (NullOrUndefined Nothing), "KeyAlgorithm": (NullOrUndefined Nothing), "KeyUsages": (NullOrUndefined Nothing), "NotAfter": (NullOrUndefined Nothing), "NotBefore": (NullOrUndefined Nothing), "RenewalSummary": (NullOrUndefined Nothing), "RevocationReason": (NullOrUndefined Nothing), "RevokedAt": (NullOrUndefined Nothing), "Serial": (NullOrUndefined Nothing), "SignatureAlgorithm": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Subject": (NullOrUndefined Nothing), "SubjectAlternativeNames": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCertificateDetail  = CertificateDetail { "CertificateArn": Nothing, "CreatedAt": Nothing, "DomainName": Nothing, "DomainValidationOptions": Nothing, "ExtendedKeyUsages": Nothing, "FailureReason": Nothing, "ImportedAt": Nothing, "InUseBy": Nothing, "IssuedAt": Nothing, "Issuer": Nothing, "KeyAlgorithm": Nothing, "KeyUsages": Nothing, "NotAfter": Nothing, "NotBefore": Nothing, "RenewalSummary": Nothing, "RevocationReason": Nothing, "RevokedAt": Nothing, "Serial": Nothing, "SignatureAlgorithm": Nothing, "Status": Nothing, "Subject": Nothing, "SubjectAlternativeNames": Nothing, "Type": Nothing }
 
 -- | Constructs CertificateDetail's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCertificateDetail' :: ( { "CertificateArn" :: NullOrUndefined (Arn) , "DomainName" :: NullOrUndefined (DomainNameString) , "SubjectAlternativeNames" :: NullOrUndefined (DomainList) , "DomainValidationOptions" :: NullOrUndefined (DomainValidationList) , "Serial" :: NullOrUndefined (String) , "Subject" :: NullOrUndefined (String) , "Issuer" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (TStamp) , "IssuedAt" :: NullOrUndefined (TStamp) , "ImportedAt" :: NullOrUndefined (TStamp) , "Status" :: NullOrUndefined (CertificateStatus) , "RevokedAt" :: NullOrUndefined (TStamp) , "RevocationReason" :: NullOrUndefined (RevocationReason) , "NotBefore" :: NullOrUndefined (TStamp) , "NotAfter" :: NullOrUndefined (TStamp) , "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm) , "SignatureAlgorithm" :: NullOrUndefined (String) , "InUseBy" :: NullOrUndefined (InUseList) , "FailureReason" :: NullOrUndefined (FailureReason) , "Type" :: NullOrUndefined (CertificateType) , "RenewalSummary" :: NullOrUndefined (RenewalSummary) , "KeyUsages" :: NullOrUndefined (KeyUsageList) , "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList) } -> {"CertificateArn" :: NullOrUndefined (Arn) , "DomainName" :: NullOrUndefined (DomainNameString) , "SubjectAlternativeNames" :: NullOrUndefined (DomainList) , "DomainValidationOptions" :: NullOrUndefined (DomainValidationList) , "Serial" :: NullOrUndefined (String) , "Subject" :: NullOrUndefined (String) , "Issuer" :: NullOrUndefined (String) , "CreatedAt" :: NullOrUndefined (TStamp) , "IssuedAt" :: NullOrUndefined (TStamp) , "ImportedAt" :: NullOrUndefined (TStamp) , "Status" :: NullOrUndefined (CertificateStatus) , "RevokedAt" :: NullOrUndefined (TStamp) , "RevocationReason" :: NullOrUndefined (RevocationReason) , "NotBefore" :: NullOrUndefined (TStamp) , "NotAfter" :: NullOrUndefined (TStamp) , "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm) , "SignatureAlgorithm" :: NullOrUndefined (String) , "InUseBy" :: NullOrUndefined (InUseList) , "FailureReason" :: NullOrUndefined (FailureReason) , "Type" :: NullOrUndefined (CertificateType) , "RenewalSummary" :: NullOrUndefined (RenewalSummary) , "KeyUsages" :: NullOrUndefined (KeyUsageList) , "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList) } ) -> CertificateDetail
-newCertificateDetail'  customize = (CertificateDetail <<< customize) { "CertificateArn": (NullOrUndefined Nothing), "CreatedAt": (NullOrUndefined Nothing), "DomainName": (NullOrUndefined Nothing), "DomainValidationOptions": (NullOrUndefined Nothing), "ExtendedKeyUsages": (NullOrUndefined Nothing), "FailureReason": (NullOrUndefined Nothing), "ImportedAt": (NullOrUndefined Nothing), "InUseBy": (NullOrUndefined Nothing), "IssuedAt": (NullOrUndefined Nothing), "Issuer": (NullOrUndefined Nothing), "KeyAlgorithm": (NullOrUndefined Nothing), "KeyUsages": (NullOrUndefined Nothing), "NotAfter": (NullOrUndefined Nothing), "NotBefore": (NullOrUndefined Nothing), "RenewalSummary": (NullOrUndefined Nothing), "RevocationReason": (NullOrUndefined Nothing), "RevokedAt": (NullOrUndefined Nothing), "Serial": (NullOrUndefined Nothing), "SignatureAlgorithm": (NullOrUndefined Nothing), "Status": (NullOrUndefined Nothing), "Subject": (NullOrUndefined Nothing), "SubjectAlternativeNames": (NullOrUndefined Nothing), "Type": (NullOrUndefined Nothing) }
+newCertificateDetail' :: ( { "CertificateArn" :: Maybe (Arn) , "DomainName" :: Maybe (DomainNameString) , "SubjectAlternativeNames" :: Maybe (DomainList) , "DomainValidationOptions" :: Maybe (DomainValidationList) , "Serial" :: Maybe (String) , "Subject" :: Maybe (String) , "Issuer" :: Maybe (String) , "CreatedAt" :: Maybe (TStamp) , "IssuedAt" :: Maybe (TStamp) , "ImportedAt" :: Maybe (TStamp) , "Status" :: Maybe (CertificateStatus) , "RevokedAt" :: Maybe (TStamp) , "RevocationReason" :: Maybe (RevocationReason) , "NotBefore" :: Maybe (TStamp) , "NotAfter" :: Maybe (TStamp) , "KeyAlgorithm" :: Maybe (KeyAlgorithm) , "SignatureAlgorithm" :: Maybe (String) , "InUseBy" :: Maybe (InUseList) , "FailureReason" :: Maybe (FailureReason) , "Type" :: Maybe (CertificateType) , "RenewalSummary" :: Maybe (RenewalSummary) , "KeyUsages" :: Maybe (KeyUsageList) , "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList) } -> {"CertificateArn" :: Maybe (Arn) , "DomainName" :: Maybe (DomainNameString) , "SubjectAlternativeNames" :: Maybe (DomainList) , "DomainValidationOptions" :: Maybe (DomainValidationList) , "Serial" :: Maybe (String) , "Subject" :: Maybe (String) , "Issuer" :: Maybe (String) , "CreatedAt" :: Maybe (TStamp) , "IssuedAt" :: Maybe (TStamp) , "ImportedAt" :: Maybe (TStamp) , "Status" :: Maybe (CertificateStatus) , "RevokedAt" :: Maybe (TStamp) , "RevocationReason" :: Maybe (RevocationReason) , "NotBefore" :: Maybe (TStamp) , "NotAfter" :: Maybe (TStamp) , "KeyAlgorithm" :: Maybe (KeyAlgorithm) , "SignatureAlgorithm" :: Maybe (String) , "InUseBy" :: Maybe (InUseList) , "FailureReason" :: Maybe (FailureReason) , "Type" :: Maybe (CertificateType) , "RenewalSummary" :: Maybe (RenewalSummary) , "KeyUsages" :: Maybe (KeyUsageList) , "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList) } ) -> CertificateDetail
+newCertificateDetail'  customize = (CertificateDetail <<< customize) { "CertificateArn": Nothing, "CreatedAt": Nothing, "DomainName": Nothing, "DomainValidationOptions": Nothing, "ExtendedKeyUsages": Nothing, "FailureReason": Nothing, "ImportedAt": Nothing, "InUseBy": Nothing, "IssuedAt": Nothing, "Issuer": Nothing, "KeyAlgorithm": Nothing, "KeyUsages": Nothing, "NotAfter": Nothing, "NotBefore": Nothing, "RenewalSummary": Nothing, "RevocationReason": Nothing, "RevokedAt": Nothing, "Serial": Nothing, "SignatureAlgorithm": Nothing, "Status": Nothing, "Subject": Nothing, "SubjectAlternativeNames": Nothing, "Type": Nothing }
 
 
 
@@ -147,8 +146,8 @@ instance encodeCertificateStatuses :: Encode CertificateStatuses where encode = 
 
 -- | <p>This structure is returned in the response object of <a>ListCertificates</a> action. </p>
 newtype CertificateSummary = CertificateSummary 
-  { "CertificateArn" :: NullOrUndefined (Arn)
-  , "DomainName" :: NullOrUndefined (DomainNameString)
+  { "CertificateArn" :: Maybe (Arn)
+  , "DomainName" :: Maybe (DomainNameString)
   }
 derive instance newtypeCertificateSummary :: Newtype CertificateSummary _
 derive instance repGenericCertificateSummary :: Generic CertificateSummary _
@@ -158,12 +157,12 @@ instance encodeCertificateSummary :: Encode CertificateSummary where encode = ge
 
 -- | Constructs CertificateSummary from required parameters
 newCertificateSummary :: CertificateSummary
-newCertificateSummary  = CertificateSummary { "CertificateArn": (NullOrUndefined Nothing), "DomainName": (NullOrUndefined Nothing) }
+newCertificateSummary  = CertificateSummary { "CertificateArn": Nothing, "DomainName": Nothing }
 
 -- | Constructs CertificateSummary's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCertificateSummary' :: ( { "CertificateArn" :: NullOrUndefined (Arn) , "DomainName" :: NullOrUndefined (DomainNameString) } -> {"CertificateArn" :: NullOrUndefined (Arn) , "DomainName" :: NullOrUndefined (DomainNameString) } ) -> CertificateSummary
-newCertificateSummary'  customize = (CertificateSummary <<< customize) { "CertificateArn": (NullOrUndefined Nothing), "DomainName": (NullOrUndefined Nothing) }
+newCertificateSummary' :: ( { "CertificateArn" :: Maybe (Arn) , "DomainName" :: Maybe (DomainNameString) } -> {"CertificateArn" :: Maybe (Arn) , "DomainName" :: Maybe (DomainNameString) } ) -> CertificateSummary
+newCertificateSummary'  customize = (CertificateSummary <<< customize) { "CertificateArn": Nothing, "DomainName": Nothing }
 
 
 
@@ -226,7 +225,7 @@ newDescribeCertificateRequest' _CertificateArn customize = (DescribeCertificateR
 
 
 newtype DescribeCertificateResponse = DescribeCertificateResponse 
-  { "Certificate" :: NullOrUndefined (CertificateDetail)
+  { "Certificate" :: Maybe (CertificateDetail)
   }
 derive instance newtypeDescribeCertificateResponse :: Newtype DescribeCertificateResponse _
 derive instance repGenericDescribeCertificateResponse :: Generic DescribeCertificateResponse _
@@ -236,12 +235,12 @@ instance encodeDescribeCertificateResponse :: Encode DescribeCertificateResponse
 
 -- | Constructs DescribeCertificateResponse from required parameters
 newDescribeCertificateResponse :: DescribeCertificateResponse
-newDescribeCertificateResponse  = DescribeCertificateResponse { "Certificate": (NullOrUndefined Nothing) }
+newDescribeCertificateResponse  = DescribeCertificateResponse { "Certificate": Nothing }
 
 -- | Constructs DescribeCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeCertificateResponse' :: ( { "Certificate" :: NullOrUndefined (CertificateDetail) } -> {"Certificate" :: NullOrUndefined (CertificateDetail) } ) -> DescribeCertificateResponse
-newDescribeCertificateResponse'  customize = (DescribeCertificateResponse <<< customize) { "Certificate": (NullOrUndefined Nothing) }
+newDescribeCertificateResponse' :: ( { "Certificate" :: Maybe (CertificateDetail) } -> {"Certificate" :: Maybe (CertificateDetail) } ) -> DescribeCertificateResponse
+newDescribeCertificateResponse'  customize = (DescribeCertificateResponse <<< customize) { "Certificate": Nothing }
 
 
 
@@ -275,11 +274,11 @@ instance encodeDomainStatus :: Encode DomainStatus where encode = genericEncode 
 -- | <p>Contains information about the validation of each domain name in the certificate.</p>
 newtype DomainValidation = DomainValidation 
   { "DomainName" :: (DomainNameString)
-  , "ValidationEmails" :: NullOrUndefined (ValidationEmailList)
-  , "ValidationDomain" :: NullOrUndefined (DomainNameString)
-  , "ValidationStatus" :: NullOrUndefined (DomainStatus)
-  , "ResourceRecord" :: NullOrUndefined (ResourceRecord)
-  , "ValidationMethod" :: NullOrUndefined (ValidationMethod)
+  , "ValidationEmails" :: Maybe (ValidationEmailList)
+  , "ValidationDomain" :: Maybe (DomainNameString)
+  , "ValidationStatus" :: Maybe (DomainStatus)
+  , "ResourceRecord" :: Maybe (ResourceRecord)
+  , "ValidationMethod" :: Maybe (ValidationMethod)
   }
 derive instance newtypeDomainValidation :: Newtype DomainValidation _
 derive instance repGenericDomainValidation :: Generic DomainValidation _
@@ -289,12 +288,12 @@ instance encodeDomainValidation :: Encode DomainValidation where encode = generi
 
 -- | Constructs DomainValidation from required parameters
 newDomainValidation :: DomainNameString -> DomainValidation
-newDomainValidation _DomainName = DomainValidation { "DomainName": _DomainName, "ResourceRecord": (NullOrUndefined Nothing), "ValidationDomain": (NullOrUndefined Nothing), "ValidationEmails": (NullOrUndefined Nothing), "ValidationMethod": (NullOrUndefined Nothing), "ValidationStatus": (NullOrUndefined Nothing) }
+newDomainValidation _DomainName = DomainValidation { "DomainName": _DomainName, "ResourceRecord": Nothing, "ValidationDomain": Nothing, "ValidationEmails": Nothing, "ValidationMethod": Nothing, "ValidationStatus": Nothing }
 
 -- | Constructs DomainValidation's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDomainValidation' :: DomainNameString -> ( { "DomainName" :: (DomainNameString) , "ValidationEmails" :: NullOrUndefined (ValidationEmailList) , "ValidationDomain" :: NullOrUndefined (DomainNameString) , "ValidationStatus" :: NullOrUndefined (DomainStatus) , "ResourceRecord" :: NullOrUndefined (ResourceRecord) , "ValidationMethod" :: NullOrUndefined (ValidationMethod) } -> {"DomainName" :: (DomainNameString) , "ValidationEmails" :: NullOrUndefined (ValidationEmailList) , "ValidationDomain" :: NullOrUndefined (DomainNameString) , "ValidationStatus" :: NullOrUndefined (DomainStatus) , "ResourceRecord" :: NullOrUndefined (ResourceRecord) , "ValidationMethod" :: NullOrUndefined (ValidationMethod) } ) -> DomainValidation
-newDomainValidation' _DomainName customize = (DomainValidation <<< customize) { "DomainName": _DomainName, "ResourceRecord": (NullOrUndefined Nothing), "ValidationDomain": (NullOrUndefined Nothing), "ValidationEmails": (NullOrUndefined Nothing), "ValidationMethod": (NullOrUndefined Nothing), "ValidationStatus": (NullOrUndefined Nothing) }
+newDomainValidation' :: DomainNameString -> ( { "DomainName" :: (DomainNameString) , "ValidationEmails" :: Maybe (ValidationEmailList) , "ValidationDomain" :: Maybe (DomainNameString) , "ValidationStatus" :: Maybe (DomainStatus) , "ResourceRecord" :: Maybe (ResourceRecord) , "ValidationMethod" :: Maybe (ValidationMethod) } -> {"DomainName" :: (DomainNameString) , "ValidationEmails" :: Maybe (ValidationEmailList) , "ValidationDomain" :: Maybe (DomainNameString) , "ValidationStatus" :: Maybe (DomainStatus) , "ResourceRecord" :: Maybe (ResourceRecord) , "ValidationMethod" :: Maybe (ValidationMethod) } ) -> DomainValidation
+newDomainValidation' _DomainName customize = (DomainValidation <<< customize) { "DomainName": _DomainName, "ResourceRecord": Nothing, "ValidationDomain": Nothing, "ValidationEmails": Nothing, "ValidationMethod": Nothing, "ValidationStatus": Nothing }
 
 
 
@@ -340,8 +339,8 @@ instance encodeDomainValidationOptionList :: Encode DomainValidationOptionList w
 
 -- | <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
 newtype ExtendedKeyUsage = ExtendedKeyUsage 
-  { "Name" :: NullOrUndefined (ExtendedKeyUsageName)
-  , "OID" :: NullOrUndefined (String)
+  { "Name" :: Maybe (ExtendedKeyUsageName)
+  , "OID" :: Maybe (String)
   }
 derive instance newtypeExtendedKeyUsage :: Newtype ExtendedKeyUsage _
 derive instance repGenericExtendedKeyUsage :: Generic ExtendedKeyUsage _
@@ -351,12 +350,12 @@ instance encodeExtendedKeyUsage :: Encode ExtendedKeyUsage where encode = generi
 
 -- | Constructs ExtendedKeyUsage from required parameters
 newExtendedKeyUsage :: ExtendedKeyUsage
-newExtendedKeyUsage  = ExtendedKeyUsage { "Name": (NullOrUndefined Nothing), "OID": (NullOrUndefined Nothing) }
+newExtendedKeyUsage  = ExtendedKeyUsage { "Name": Nothing, "OID": Nothing }
 
 -- | Constructs ExtendedKeyUsage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newExtendedKeyUsage' :: ( { "Name" :: NullOrUndefined (ExtendedKeyUsageName) , "OID" :: NullOrUndefined (String) } -> {"Name" :: NullOrUndefined (ExtendedKeyUsageName) , "OID" :: NullOrUndefined (String) } ) -> ExtendedKeyUsage
-newExtendedKeyUsage'  customize = (ExtendedKeyUsage <<< customize) { "Name": (NullOrUndefined Nothing), "OID": (NullOrUndefined Nothing) }
+newExtendedKeyUsage' :: ( { "Name" :: Maybe (ExtendedKeyUsageName) , "OID" :: Maybe (String) } -> {"Name" :: Maybe (ExtendedKeyUsageName) , "OID" :: Maybe (String) } ) -> ExtendedKeyUsage
+newExtendedKeyUsage'  customize = (ExtendedKeyUsage <<< customize) { "Name": Nothing, "OID": Nothing }
 
 
 
@@ -398,9 +397,9 @@ instance encodeFailureReason :: Encode FailureReason where encode = genericEncod
 
 -- | <p>This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. </p>
 newtype Filters = Filters 
-  { "extendedKeyUsage" :: NullOrUndefined (ExtendedKeyUsageFilterList)
-  , "keyUsage" :: NullOrUndefined (KeyUsageFilterList)
-  , "keyTypes" :: NullOrUndefined (KeyAlgorithmList)
+  { "extendedKeyUsage" :: Maybe (ExtendedKeyUsageFilterList)
+  , "keyUsage" :: Maybe (KeyUsageFilterList)
+  , "keyTypes" :: Maybe (KeyAlgorithmList)
   }
 derive instance newtypeFilters :: Newtype Filters _
 derive instance repGenericFilters :: Generic Filters _
@@ -410,12 +409,12 @@ instance encodeFilters :: Encode Filters where encode = genericEncode options
 
 -- | Constructs Filters from required parameters
 newFilters :: Filters
-newFilters  = Filters { "extendedKeyUsage": (NullOrUndefined Nothing), "keyTypes": (NullOrUndefined Nothing), "keyUsage": (NullOrUndefined Nothing) }
+newFilters  = Filters { "extendedKeyUsage": Nothing, "keyTypes": Nothing, "keyUsage": Nothing }
 
 -- | Constructs Filters's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newFilters' :: ( { "extendedKeyUsage" :: NullOrUndefined (ExtendedKeyUsageFilterList) , "keyUsage" :: NullOrUndefined (KeyUsageFilterList) , "keyTypes" :: NullOrUndefined (KeyAlgorithmList) } -> {"extendedKeyUsage" :: NullOrUndefined (ExtendedKeyUsageFilterList) , "keyUsage" :: NullOrUndefined (KeyUsageFilterList) , "keyTypes" :: NullOrUndefined (KeyAlgorithmList) } ) -> Filters
-newFilters'  customize = (Filters <<< customize) { "extendedKeyUsage": (NullOrUndefined Nothing), "keyTypes": (NullOrUndefined Nothing), "keyUsage": (NullOrUndefined Nothing) }
+newFilters' :: ( { "extendedKeyUsage" :: Maybe (ExtendedKeyUsageFilterList) , "keyUsage" :: Maybe (KeyUsageFilterList) , "keyTypes" :: Maybe (KeyAlgorithmList) } -> {"extendedKeyUsage" :: Maybe (ExtendedKeyUsageFilterList) , "keyUsage" :: Maybe (KeyUsageFilterList) , "keyTypes" :: Maybe (KeyAlgorithmList) } ) -> Filters
+newFilters'  customize = (Filters <<< customize) { "extendedKeyUsage": Nothing, "keyTypes": Nothing, "keyUsage": Nothing }
 
 
 
@@ -440,8 +439,8 @@ newGetCertificateRequest' _CertificateArn customize = (GetCertificateRequest <<<
 
 
 newtype GetCertificateResponse = GetCertificateResponse 
-  { "Certificate" :: NullOrUndefined (CertificateBody)
-  , "CertificateChain" :: NullOrUndefined (CertificateChain)
+  { "Certificate" :: Maybe (CertificateBody)
+  , "CertificateChain" :: Maybe (CertificateChain)
   }
 derive instance newtypeGetCertificateResponse :: Newtype GetCertificateResponse _
 derive instance repGenericGetCertificateResponse :: Generic GetCertificateResponse _
@@ -451,12 +450,12 @@ instance encodeGetCertificateResponse :: Encode GetCertificateResponse where enc
 
 -- | Constructs GetCertificateResponse from required parameters
 newGetCertificateResponse :: GetCertificateResponse
-newGetCertificateResponse  = GetCertificateResponse { "Certificate": (NullOrUndefined Nothing), "CertificateChain": (NullOrUndefined Nothing) }
+newGetCertificateResponse  = GetCertificateResponse { "Certificate": Nothing, "CertificateChain": Nothing }
 
 -- | Constructs GetCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetCertificateResponse' :: ( { "Certificate" :: NullOrUndefined (CertificateBody) , "CertificateChain" :: NullOrUndefined (CertificateChain) } -> {"Certificate" :: NullOrUndefined (CertificateBody) , "CertificateChain" :: NullOrUndefined (CertificateChain) } ) -> GetCertificateResponse
-newGetCertificateResponse'  customize = (GetCertificateResponse <<< customize) { "Certificate": (NullOrUndefined Nothing), "CertificateChain": (NullOrUndefined Nothing) }
+newGetCertificateResponse' :: ( { "Certificate" :: Maybe (CertificateBody) , "CertificateChain" :: Maybe (CertificateChain) } -> {"Certificate" :: Maybe (CertificateBody) , "CertificateChain" :: Maybe (CertificateChain) } ) -> GetCertificateResponse
+newGetCertificateResponse'  customize = (GetCertificateResponse <<< customize) { "Certificate": Nothing, "CertificateChain": Nothing }
 
 
 
@@ -470,10 +469,10 @@ instance encodeIdempotencyToken :: Encode IdempotencyToken where encode = generi
 
 
 newtype ImportCertificateRequest = ImportCertificateRequest 
-  { "CertificateArn" :: NullOrUndefined (Arn)
+  { "CertificateArn" :: Maybe (Arn)
   , "Certificate" :: (CertificateBodyBlob)
   , "PrivateKey" :: (PrivateKeyBlob)
-  , "CertificateChain" :: NullOrUndefined (CertificateChainBlob)
+  , "CertificateChain" :: Maybe (CertificateChainBlob)
   }
 derive instance newtypeImportCertificateRequest :: Newtype ImportCertificateRequest _
 derive instance repGenericImportCertificateRequest :: Generic ImportCertificateRequest _
@@ -483,17 +482,17 @@ instance encodeImportCertificateRequest :: Encode ImportCertificateRequest where
 
 -- | Constructs ImportCertificateRequest from required parameters
 newImportCertificateRequest :: CertificateBodyBlob -> PrivateKeyBlob -> ImportCertificateRequest
-newImportCertificateRequest _Certificate _PrivateKey = ImportCertificateRequest { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "CertificateArn": (NullOrUndefined Nothing), "CertificateChain": (NullOrUndefined Nothing) }
+newImportCertificateRequest _Certificate _PrivateKey = ImportCertificateRequest { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "CertificateArn": Nothing, "CertificateChain": Nothing }
 
 -- | Constructs ImportCertificateRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newImportCertificateRequest' :: CertificateBodyBlob -> PrivateKeyBlob -> ( { "CertificateArn" :: NullOrUndefined (Arn) , "Certificate" :: (CertificateBodyBlob) , "PrivateKey" :: (PrivateKeyBlob) , "CertificateChain" :: NullOrUndefined (CertificateChainBlob) } -> {"CertificateArn" :: NullOrUndefined (Arn) , "Certificate" :: (CertificateBodyBlob) , "PrivateKey" :: (PrivateKeyBlob) , "CertificateChain" :: NullOrUndefined (CertificateChainBlob) } ) -> ImportCertificateRequest
-newImportCertificateRequest' _Certificate _PrivateKey customize = (ImportCertificateRequest <<< customize) { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "CertificateArn": (NullOrUndefined Nothing), "CertificateChain": (NullOrUndefined Nothing) }
+newImportCertificateRequest' :: CertificateBodyBlob -> PrivateKeyBlob -> ( { "CertificateArn" :: Maybe (Arn) , "Certificate" :: (CertificateBodyBlob) , "PrivateKey" :: (PrivateKeyBlob) , "CertificateChain" :: Maybe (CertificateChainBlob) } -> {"CertificateArn" :: Maybe (Arn) , "Certificate" :: (CertificateBodyBlob) , "PrivateKey" :: (PrivateKeyBlob) , "CertificateChain" :: Maybe (CertificateChainBlob) } ) -> ImportCertificateRequest
+newImportCertificateRequest' _Certificate _PrivateKey customize = (ImportCertificateRequest <<< customize) { "Certificate": _Certificate, "PrivateKey": _PrivateKey, "CertificateArn": Nothing, "CertificateChain": Nothing }
 
 
 
 newtype ImportCertificateResponse = ImportCertificateResponse 
-  { "CertificateArn" :: NullOrUndefined (Arn)
+  { "CertificateArn" :: Maybe (Arn)
   }
 derive instance newtypeImportCertificateResponse :: Newtype ImportCertificateResponse _
 derive instance repGenericImportCertificateResponse :: Generic ImportCertificateResponse _
@@ -503,12 +502,12 @@ instance encodeImportCertificateResponse :: Encode ImportCertificateResponse whe
 
 -- | Constructs ImportCertificateResponse from required parameters
 newImportCertificateResponse :: ImportCertificateResponse
-newImportCertificateResponse  = ImportCertificateResponse { "CertificateArn": (NullOrUndefined Nothing) }
+newImportCertificateResponse  = ImportCertificateResponse { "CertificateArn": Nothing }
 
 -- | Constructs ImportCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newImportCertificateResponse' :: ( { "CertificateArn" :: NullOrUndefined (Arn) } -> {"CertificateArn" :: NullOrUndefined (Arn) } ) -> ImportCertificateResponse
-newImportCertificateResponse'  customize = (ImportCertificateResponse <<< customize) { "CertificateArn": (NullOrUndefined Nothing) }
+newImportCertificateResponse' :: ( { "CertificateArn" :: Maybe (Arn) } -> {"CertificateArn" :: Maybe (Arn) } ) -> ImportCertificateResponse
+newImportCertificateResponse'  customize = (ImportCertificateResponse <<< customize) { "CertificateArn": Nothing }
 
 
 
@@ -523,7 +522,7 @@ instance encodeInUseList :: Encode InUseList where encode = genericEncode option
 
 -- | <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
 newtype InvalidArnException = InvalidArnException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidArnException :: Newtype InvalidArnException _
 derive instance repGenericInvalidArnException :: Generic InvalidArnException _
@@ -533,18 +532,18 @@ instance encodeInvalidArnException :: Encode InvalidArnException where encode = 
 
 -- | Constructs InvalidArnException from required parameters
 newInvalidArnException :: InvalidArnException
-newInvalidArnException  = InvalidArnException { "message": (NullOrUndefined Nothing) }
+newInvalidArnException  = InvalidArnException { "message": Nothing }
 
 -- | Constructs InvalidArnException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidArnException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidArnException
-newInvalidArnException'  customize = (InvalidArnException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidArnException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidArnException
+newInvalidArnException'  customize = (InvalidArnException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>
 newtype InvalidDomainValidationOptionsException = InvalidDomainValidationOptionsException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidDomainValidationOptionsException :: Newtype InvalidDomainValidationOptionsException _
 derive instance repGenericInvalidDomainValidationOptionsException :: Generic InvalidDomainValidationOptionsException _
@@ -554,18 +553,18 @@ instance encodeInvalidDomainValidationOptionsException :: Encode InvalidDomainVa
 
 -- | Constructs InvalidDomainValidationOptionsException from required parameters
 newInvalidDomainValidationOptionsException :: InvalidDomainValidationOptionsException
-newInvalidDomainValidationOptionsException  = InvalidDomainValidationOptionsException { "message": (NullOrUndefined Nothing) }
+newInvalidDomainValidationOptionsException  = InvalidDomainValidationOptionsException { "message": Nothing }
 
 -- | Constructs InvalidDomainValidationOptionsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidDomainValidationOptionsException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidDomainValidationOptionsException
-newInvalidDomainValidationOptionsException'  customize = (InvalidDomainValidationOptionsException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidDomainValidationOptionsException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidDomainValidationOptionsException
+newInvalidDomainValidationOptionsException'  customize = (InvalidDomainValidationOptionsException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid.</p>
 newtype InvalidStateException = InvalidStateException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidStateException :: Newtype InvalidStateException _
 derive instance repGenericInvalidStateException :: Generic InvalidStateException _
@@ -575,18 +574,18 @@ instance encodeInvalidStateException :: Encode InvalidStateException where encod
 
 -- | Constructs InvalidStateException from required parameters
 newInvalidStateException :: InvalidStateException
-newInvalidStateException  = InvalidStateException { "message": (NullOrUndefined Nothing) }
+newInvalidStateException  = InvalidStateException { "message": Nothing }
 
 -- | Constructs InvalidStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidStateException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidStateException
-newInvalidStateException'  customize = (InvalidStateException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidStateException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidStateException
+newInvalidStateException'  customize = (InvalidStateException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
 newtype InvalidTagException = InvalidTagException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeInvalidTagException :: Newtype InvalidTagException _
 derive instance repGenericInvalidTagException :: Generic InvalidTagException _
@@ -596,12 +595,12 @@ instance encodeInvalidTagException :: Encode InvalidTagException where encode = 
 
 -- | Constructs InvalidTagException from required parameters
 newInvalidTagException :: InvalidTagException
-newInvalidTagException  = InvalidTagException { "message": (NullOrUndefined Nothing) }
+newInvalidTagException  = InvalidTagException { "message": Nothing }
 
 -- | Constructs InvalidTagException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidTagException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> InvalidTagException
-newInvalidTagException'  customize = (InvalidTagException <<< customize) { "message": (NullOrUndefined Nothing) }
+newInvalidTagException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> InvalidTagException
+newInvalidTagException'  customize = (InvalidTagException <<< customize) { "message": Nothing }
 
 
 
@@ -625,7 +624,7 @@ instance encodeKeyAlgorithmList :: Encode KeyAlgorithmList where encode = generi
 
 -- | <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
 newtype KeyUsage = KeyUsage 
-  { "Name" :: NullOrUndefined (KeyUsageName)
+  { "Name" :: Maybe (KeyUsageName)
   }
 derive instance newtypeKeyUsage :: Newtype KeyUsage _
 derive instance repGenericKeyUsage :: Generic KeyUsage _
@@ -635,12 +634,12 @@ instance encodeKeyUsage :: Encode KeyUsage where encode = genericEncode options
 
 -- | Constructs KeyUsage from required parameters
 newKeyUsage :: KeyUsage
-newKeyUsage  = KeyUsage { "Name": (NullOrUndefined Nothing) }
+newKeyUsage  = KeyUsage { "Name": Nothing }
 
 -- | Constructs KeyUsage's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKeyUsage' :: ( { "Name" :: NullOrUndefined (KeyUsageName) } -> {"Name" :: NullOrUndefined (KeyUsageName) } ) -> KeyUsage
-newKeyUsage'  customize = (KeyUsage <<< customize) { "Name": (NullOrUndefined Nothing) }
+newKeyUsage' :: ( { "Name" :: Maybe (KeyUsageName) } -> {"Name" :: Maybe (KeyUsageName) } ) -> KeyUsage
+newKeyUsage'  customize = (KeyUsage <<< customize) { "Name": Nothing }
 
 
 
@@ -673,7 +672,7 @@ instance encodeKeyUsageName :: Encode KeyUsageName where encode = genericEncode 
 
 -- | <p>An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've requested too many certificates for your account. See the exception message returned by ACM to determine which limit you have violated. For more information about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.</p>
 newtype LimitExceededException = LimitExceededException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeLimitExceededException :: Newtype LimitExceededException _
 derive instance repGenericLimitExceededException :: Generic LimitExceededException _
@@ -683,20 +682,20 @@ instance encodeLimitExceededException :: Encode LimitExceededException where enc
 
 -- | Constructs LimitExceededException from required parameters
 newLimitExceededException :: LimitExceededException
-newLimitExceededException  = LimitExceededException { "message": (NullOrUndefined Nothing) }
+newLimitExceededException  = LimitExceededException { "message": Nothing }
 
 -- | Constructs LimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLimitExceededException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> LimitExceededException
-newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": (NullOrUndefined Nothing) }
+newLimitExceededException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> LimitExceededException
+newLimitExceededException'  customize = (LimitExceededException <<< customize) { "message": Nothing }
 
 
 
 newtype ListCertificatesRequest = ListCertificatesRequest 
-  { "CertificateStatuses" :: NullOrUndefined (CertificateStatuses)
-  , "Includes" :: NullOrUndefined (Filters)
-  , "NextToken" :: NullOrUndefined (NextToken)
-  , "MaxItems" :: NullOrUndefined (MaxItems)
+  { "CertificateStatuses" :: Maybe (CertificateStatuses)
+  , "Includes" :: Maybe (Filters)
+  , "NextToken" :: Maybe (NextToken)
+  , "MaxItems" :: Maybe (MaxItems)
   }
 derive instance newtypeListCertificatesRequest :: Newtype ListCertificatesRequest _
 derive instance repGenericListCertificatesRequest :: Generic ListCertificatesRequest _
@@ -706,18 +705,18 @@ instance encodeListCertificatesRequest :: Encode ListCertificatesRequest where e
 
 -- | Constructs ListCertificatesRequest from required parameters
 newListCertificatesRequest :: ListCertificatesRequest
-newListCertificatesRequest  = ListCertificatesRequest { "CertificateStatuses": (NullOrUndefined Nothing), "Includes": (NullOrUndefined Nothing), "MaxItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCertificatesRequest  = ListCertificatesRequest { "CertificateStatuses": Nothing, "Includes": Nothing, "MaxItems": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCertificatesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCertificatesRequest' :: ( { "CertificateStatuses" :: NullOrUndefined (CertificateStatuses) , "Includes" :: NullOrUndefined (Filters) , "NextToken" :: NullOrUndefined (NextToken) , "MaxItems" :: NullOrUndefined (MaxItems) } -> {"CertificateStatuses" :: NullOrUndefined (CertificateStatuses) , "Includes" :: NullOrUndefined (Filters) , "NextToken" :: NullOrUndefined (NextToken) , "MaxItems" :: NullOrUndefined (MaxItems) } ) -> ListCertificatesRequest
-newListCertificatesRequest'  customize = (ListCertificatesRequest <<< customize) { "CertificateStatuses": (NullOrUndefined Nothing), "Includes": (NullOrUndefined Nothing), "MaxItems": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCertificatesRequest' :: ( { "CertificateStatuses" :: Maybe (CertificateStatuses) , "Includes" :: Maybe (Filters) , "NextToken" :: Maybe (NextToken) , "MaxItems" :: Maybe (MaxItems) } -> {"CertificateStatuses" :: Maybe (CertificateStatuses) , "Includes" :: Maybe (Filters) , "NextToken" :: Maybe (NextToken) , "MaxItems" :: Maybe (MaxItems) } ) -> ListCertificatesRequest
+newListCertificatesRequest'  customize = (ListCertificatesRequest <<< customize) { "CertificateStatuses": Nothing, "Includes": Nothing, "MaxItems": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListCertificatesResponse = ListCertificatesResponse 
-  { "NextToken" :: NullOrUndefined (NextToken)
-  , "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList)
+  { "NextToken" :: Maybe (NextToken)
+  , "CertificateSummaryList" :: Maybe (CertificateSummaryList)
   }
 derive instance newtypeListCertificatesResponse :: Newtype ListCertificatesResponse _
 derive instance repGenericListCertificatesResponse :: Generic ListCertificatesResponse _
@@ -727,12 +726,12 @@ instance encodeListCertificatesResponse :: Encode ListCertificatesResponse where
 
 -- | Constructs ListCertificatesResponse from required parameters
 newListCertificatesResponse :: ListCertificatesResponse
-newListCertificatesResponse  = ListCertificatesResponse { "CertificateSummaryList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCertificatesResponse  = ListCertificatesResponse { "CertificateSummaryList": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListCertificatesResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListCertificatesResponse' :: ( { "NextToken" :: NullOrUndefined (NextToken) , "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList) } -> {"NextToken" :: NullOrUndefined (NextToken) , "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList) } ) -> ListCertificatesResponse
-newListCertificatesResponse'  customize = (ListCertificatesResponse <<< customize) { "CertificateSummaryList": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListCertificatesResponse' :: ( { "NextToken" :: Maybe (NextToken) , "CertificateSummaryList" :: Maybe (CertificateSummaryList) } -> {"NextToken" :: Maybe (NextToken) , "CertificateSummaryList" :: Maybe (CertificateSummaryList) } ) -> ListCertificatesResponse
+newListCertificatesResponse'  customize = (ListCertificatesResponse <<< customize) { "CertificateSummaryList": Nothing, "NextToken": Nothing }
 
 
 
@@ -757,7 +756,7 @@ newListTagsForCertificateRequest' _CertificateArn customize = (ListTagsForCertif
 
 
 newtype ListTagsForCertificateResponse = ListTagsForCertificateResponse 
-  { "Tags" :: NullOrUndefined (TagList)
+  { "Tags" :: Maybe (TagList)
   }
 derive instance newtypeListTagsForCertificateResponse :: Newtype ListTagsForCertificateResponse _
 derive instance repGenericListTagsForCertificateResponse :: Generic ListTagsForCertificateResponse _
@@ -767,12 +766,12 @@ instance encodeListTagsForCertificateResponse :: Encode ListTagsForCertificateRe
 
 -- | Constructs ListTagsForCertificateResponse from required parameters
 newListTagsForCertificateResponse :: ListTagsForCertificateResponse
-newListTagsForCertificateResponse  = ListTagsForCertificateResponse { "Tags": (NullOrUndefined Nothing) }
+newListTagsForCertificateResponse  = ListTagsForCertificateResponse { "Tags": Nothing }
 
 -- | Constructs ListTagsForCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListTagsForCertificateResponse' :: ( { "Tags" :: NullOrUndefined (TagList) } -> {"Tags" :: NullOrUndefined (TagList) } ) -> ListTagsForCertificateResponse
-newListTagsForCertificateResponse'  customize = (ListTagsForCertificateResponse <<< customize) { "Tags": (NullOrUndefined Nothing) }
+newListTagsForCertificateResponse' :: ( { "Tags" :: Maybe (TagList) } -> {"Tags" :: Maybe (TagList) } ) -> ListTagsForCertificateResponse
+newListTagsForCertificateResponse'  customize = (ListTagsForCertificateResponse <<< customize) { "Tags": Nothing }
 
 
 
@@ -866,10 +865,10 @@ newRenewalSummary' _DomainValidationOptions _RenewalStatus customize = (RenewalS
 
 newtype RequestCertificateRequest = RequestCertificateRequest 
   { "DomainName" :: (DomainNameString)
-  , "ValidationMethod" :: NullOrUndefined (ValidationMethod)
-  , "SubjectAlternativeNames" :: NullOrUndefined (DomainList)
-  , "IdempotencyToken" :: NullOrUndefined (IdempotencyToken)
-  , "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList)
+  , "ValidationMethod" :: Maybe (ValidationMethod)
+  , "SubjectAlternativeNames" :: Maybe (DomainList)
+  , "IdempotencyToken" :: Maybe (IdempotencyToken)
+  , "DomainValidationOptions" :: Maybe (DomainValidationOptionList)
   }
 derive instance newtypeRequestCertificateRequest :: Newtype RequestCertificateRequest _
 derive instance repGenericRequestCertificateRequest :: Generic RequestCertificateRequest _
@@ -879,17 +878,17 @@ instance encodeRequestCertificateRequest :: Encode RequestCertificateRequest whe
 
 -- | Constructs RequestCertificateRequest from required parameters
 newRequestCertificateRequest :: DomainNameString -> RequestCertificateRequest
-newRequestCertificateRequest _DomainName = RequestCertificateRequest { "DomainName": _DomainName, "DomainValidationOptions": (NullOrUndefined Nothing), "IdempotencyToken": (NullOrUndefined Nothing), "SubjectAlternativeNames": (NullOrUndefined Nothing), "ValidationMethod": (NullOrUndefined Nothing) }
+newRequestCertificateRequest _DomainName = RequestCertificateRequest { "DomainName": _DomainName, "DomainValidationOptions": Nothing, "IdempotencyToken": Nothing, "SubjectAlternativeNames": Nothing, "ValidationMethod": Nothing }
 
 -- | Constructs RequestCertificateRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRequestCertificateRequest' :: DomainNameString -> ( { "DomainName" :: (DomainNameString) , "ValidationMethod" :: NullOrUndefined (ValidationMethod) , "SubjectAlternativeNames" :: NullOrUndefined (DomainList) , "IdempotencyToken" :: NullOrUndefined (IdempotencyToken) , "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList) } -> {"DomainName" :: (DomainNameString) , "ValidationMethod" :: NullOrUndefined (ValidationMethod) , "SubjectAlternativeNames" :: NullOrUndefined (DomainList) , "IdempotencyToken" :: NullOrUndefined (IdempotencyToken) , "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList) } ) -> RequestCertificateRequest
-newRequestCertificateRequest' _DomainName customize = (RequestCertificateRequest <<< customize) { "DomainName": _DomainName, "DomainValidationOptions": (NullOrUndefined Nothing), "IdempotencyToken": (NullOrUndefined Nothing), "SubjectAlternativeNames": (NullOrUndefined Nothing), "ValidationMethod": (NullOrUndefined Nothing) }
+newRequestCertificateRequest' :: DomainNameString -> ( { "DomainName" :: (DomainNameString) , "ValidationMethod" :: Maybe (ValidationMethod) , "SubjectAlternativeNames" :: Maybe (DomainList) , "IdempotencyToken" :: Maybe (IdempotencyToken) , "DomainValidationOptions" :: Maybe (DomainValidationOptionList) } -> {"DomainName" :: (DomainNameString) , "ValidationMethod" :: Maybe (ValidationMethod) , "SubjectAlternativeNames" :: Maybe (DomainList) , "IdempotencyToken" :: Maybe (IdempotencyToken) , "DomainValidationOptions" :: Maybe (DomainValidationOptionList) } ) -> RequestCertificateRequest
+newRequestCertificateRequest' _DomainName customize = (RequestCertificateRequest <<< customize) { "DomainName": _DomainName, "DomainValidationOptions": Nothing, "IdempotencyToken": Nothing, "SubjectAlternativeNames": Nothing, "ValidationMethod": Nothing }
 
 
 
 newtype RequestCertificateResponse = RequestCertificateResponse 
-  { "CertificateArn" :: NullOrUndefined (Arn)
+  { "CertificateArn" :: Maybe (Arn)
   }
 derive instance newtypeRequestCertificateResponse :: Newtype RequestCertificateResponse _
 derive instance repGenericRequestCertificateResponse :: Generic RequestCertificateResponse _
@@ -899,18 +898,18 @@ instance encodeRequestCertificateResponse :: Encode RequestCertificateResponse w
 
 -- | Constructs RequestCertificateResponse from required parameters
 newRequestCertificateResponse :: RequestCertificateResponse
-newRequestCertificateResponse  = RequestCertificateResponse { "CertificateArn": (NullOrUndefined Nothing) }
+newRequestCertificateResponse  = RequestCertificateResponse { "CertificateArn": Nothing }
 
 -- | Constructs RequestCertificateResponse's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRequestCertificateResponse' :: ( { "CertificateArn" :: NullOrUndefined (Arn) } -> {"CertificateArn" :: NullOrUndefined (Arn) } ) -> RequestCertificateResponse
-newRequestCertificateResponse'  customize = (RequestCertificateResponse <<< customize) { "CertificateArn": (NullOrUndefined Nothing) }
+newRequestCertificateResponse' :: ( { "CertificateArn" :: Maybe (Arn) } -> {"CertificateArn" :: Maybe (Arn) } ) -> RequestCertificateResponse
+newRequestCertificateResponse'  customize = (RequestCertificateResponse <<< customize) { "CertificateArn": Nothing }
 
 
 
 -- | <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
 newtype RequestInProgressException = RequestInProgressException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeRequestInProgressException :: Newtype RequestInProgressException _
 derive instance repGenericRequestInProgressException :: Generic RequestInProgressException _
@@ -920,12 +919,12 @@ instance encodeRequestInProgressException :: Encode RequestInProgressException w
 
 -- | Constructs RequestInProgressException from required parameters
 newRequestInProgressException :: RequestInProgressException
-newRequestInProgressException  = RequestInProgressException { "message": (NullOrUndefined Nothing) }
+newRequestInProgressException  = RequestInProgressException { "message": Nothing }
 
 -- | Constructs RequestInProgressException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newRequestInProgressException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> RequestInProgressException
-newRequestInProgressException'  customize = (RequestInProgressException <<< customize) { "message": (NullOrUndefined Nothing) }
+newRequestInProgressException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> RequestInProgressException
+newRequestInProgressException'  customize = (RequestInProgressException <<< customize) { "message": Nothing }
 
 
 
@@ -953,7 +952,7 @@ newResendValidationEmailRequest' _CertificateArn _Domain _ValidationDomain custo
 
 -- | <p>The certificate is in use by another AWS service in the caller's account. Remove the association and try again.</p>
 newtype ResourceInUseException = ResourceInUseException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeResourceInUseException :: Newtype ResourceInUseException _
 derive instance repGenericResourceInUseException :: Generic ResourceInUseException _
@@ -963,18 +962,18 @@ instance encodeResourceInUseException :: Encode ResourceInUseException where enc
 
 -- | Constructs ResourceInUseException from required parameters
 newResourceInUseException :: ResourceInUseException
-newResourceInUseException  = ResourceInUseException { "message": (NullOrUndefined Nothing) }
+newResourceInUseException  = ResourceInUseException { "message": Nothing }
 
 -- | Constructs ResourceInUseException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceInUseException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ResourceInUseException
-newResourceInUseException'  customize = (ResourceInUseException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceInUseException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ResourceInUseException
+newResourceInUseException'  customize = (ResourceInUseException <<< customize) { "message": Nothing }
 
 
 
 -- | <p>The specified certificate cannot be found in the caller's account, or the caller's account cannot be found.</p>
 newtype ResourceNotFoundException = ResourceNotFoundException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeResourceNotFoundException :: Newtype ResourceNotFoundException _
 derive instance repGenericResourceNotFoundException :: Generic ResourceNotFoundException _
@@ -984,12 +983,12 @@ instance encodeResourceNotFoundException :: Encode ResourceNotFoundException whe
 
 -- | Constructs ResourceNotFoundException from required parameters
 newResourceNotFoundException :: ResourceNotFoundException
-newResourceNotFoundException  = ResourceNotFoundException { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException  = ResourceNotFoundException { "message": Nothing }
 
 -- | Constructs ResourceNotFoundException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newResourceNotFoundException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> ResourceNotFoundException
-newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": (NullOrUndefined Nothing) }
+newResourceNotFoundException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> ResourceNotFoundException
+newResourceNotFoundException'  customize = (ResourceNotFoundException <<< customize) { "message": Nothing }
 
 
 
@@ -1037,7 +1036,7 @@ instance encodeTStamp :: Encode TStamp where encode = genericEncode options
 -- | <p>A key-value pair that identifies or specifies metadata about an ACM resource.</p>
 newtype Tag = Tag 
   { "Key" :: (TagKey)
-  , "Value" :: NullOrUndefined (TagValue)
+  , "Value" :: Maybe (TagValue)
   }
 derive instance newtypeTag :: Newtype Tag _
 derive instance repGenericTag :: Generic Tag _
@@ -1047,12 +1046,12 @@ instance encodeTag :: Encode Tag where encode = genericEncode options
 
 -- | Constructs Tag from required parameters
 newTag :: TagKey -> Tag
-newTag _Key = Tag { "Key": _Key, "Value": (NullOrUndefined Nothing) }
+newTag _Key = Tag { "Key": _Key, "Value": Nothing }
 
 -- | Constructs Tag's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTag' :: TagKey -> ( { "Key" :: (TagKey) , "Value" :: NullOrUndefined (TagValue) } -> {"Key" :: (TagKey) , "Value" :: NullOrUndefined (TagValue) } ) -> Tag
-newTag' _Key customize = (Tag <<< customize) { "Key": _Key, "Value": (NullOrUndefined Nothing) }
+newTag' :: TagKey -> ( { "Key" :: (TagKey) , "Value" :: Maybe (TagValue) } -> {"Key" :: (TagKey) , "Value" :: Maybe (TagValue) } ) -> Tag
+newTag' _Key customize = (Tag <<< customize) { "Key": _Key, "Value": Nothing }
 
 
 
@@ -1085,7 +1084,7 @@ instance encodeTagValue :: Encode TagValue where encode = genericEncode options
 
 -- | <p>The request contains too many tags. Try the request again with fewer tags.</p>
 newtype TooManyTagsException = TooManyTagsException 
-  { "message" :: NullOrUndefined (String)
+  { "message" :: Maybe (String)
   }
 derive instance newtypeTooManyTagsException :: Newtype TooManyTagsException _
 derive instance repGenericTooManyTagsException :: Generic TooManyTagsException _
@@ -1095,12 +1094,12 @@ instance encodeTooManyTagsException :: Encode TooManyTagsException where encode 
 
 -- | Constructs TooManyTagsException from required parameters
 newTooManyTagsException :: TooManyTagsException
-newTooManyTagsException  = TooManyTagsException { "message": (NullOrUndefined Nothing) }
+newTooManyTagsException  = TooManyTagsException { "message": Nothing }
 
 -- | Constructs TooManyTagsException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newTooManyTagsException' :: ( { "message" :: NullOrUndefined (String) } -> {"message" :: NullOrUndefined (String) } ) -> TooManyTagsException
-newTooManyTagsException'  customize = (TooManyTagsException <<< customize) { "message": (NullOrUndefined Nothing) }
+newTooManyTagsException' :: ( { "message" :: Maybe (String) } -> {"message" :: Maybe (String) } ) -> TooManyTagsException
+newTooManyTagsException'  customize = (TooManyTagsException <<< customize) { "message": Nothing }
 
 
 

@@ -122,7 +122,7 @@ Encode CertificateChainBlob
 
 ``` purescript
 newtype CertificateDetail
-  = CertificateDetail { "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "DomainValidationOptions" :: NullOrUndefined (DomainValidationList), "Serial" :: NullOrUndefined (String), "Subject" :: NullOrUndefined (String), "Issuer" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (TStamp), "IssuedAt" :: NullOrUndefined (TStamp), "ImportedAt" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (CertificateStatus), "RevokedAt" :: NullOrUndefined (TStamp), "RevocationReason" :: NullOrUndefined (RevocationReason), "NotBefore" :: NullOrUndefined (TStamp), "NotAfter" :: NullOrUndefined (TStamp), "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm), "SignatureAlgorithm" :: NullOrUndefined (String), "InUseBy" :: NullOrUndefined (InUseList), "FailureReason" :: NullOrUndefined (FailureReason), "Type" :: NullOrUndefined (CertificateType), "RenewalSummary" :: NullOrUndefined (RenewalSummary), "KeyUsages" :: NullOrUndefined (KeyUsageList), "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList) }
+  = CertificateDetail { "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString), "SubjectAlternativeNames" :: Maybe (DomainList), "DomainValidationOptions" :: Maybe (DomainValidationList), "Serial" :: Maybe (String), "Subject" :: Maybe (String), "Issuer" :: Maybe (String), "CreatedAt" :: Maybe (TStamp), "IssuedAt" :: Maybe (TStamp), "ImportedAt" :: Maybe (TStamp), "Status" :: Maybe (CertificateStatus), "RevokedAt" :: Maybe (TStamp), "RevocationReason" :: Maybe (RevocationReason), "NotBefore" :: Maybe (TStamp), "NotAfter" :: Maybe (TStamp), "KeyAlgorithm" :: Maybe (KeyAlgorithm), "SignatureAlgorithm" :: Maybe (String), "InUseBy" :: Maybe (InUseList), "FailureReason" :: Maybe (FailureReason), "Type" :: Maybe (CertificateType), "RenewalSummary" :: Maybe (RenewalSummary), "KeyUsages" :: Maybe (KeyUsageList), "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList) }
 ```
 
 <p>Contains metadata about an ACM certificate. This structure is returned in the response to a <a>DescribeCertificate</a> request. </p>
@@ -147,7 +147,7 @@ Constructs CertificateDetail from required parameters
 #### `newCertificateDetail'`
 
 ``` purescript
-newCertificateDetail' :: ({ "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "DomainValidationOptions" :: NullOrUndefined (DomainValidationList), "Serial" :: NullOrUndefined (String), "Subject" :: NullOrUndefined (String), "Issuer" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (TStamp), "IssuedAt" :: NullOrUndefined (TStamp), "ImportedAt" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (CertificateStatus), "RevokedAt" :: NullOrUndefined (TStamp), "RevocationReason" :: NullOrUndefined (RevocationReason), "NotBefore" :: NullOrUndefined (TStamp), "NotAfter" :: NullOrUndefined (TStamp), "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm), "SignatureAlgorithm" :: NullOrUndefined (String), "InUseBy" :: NullOrUndefined (InUseList), "FailureReason" :: NullOrUndefined (FailureReason), "Type" :: NullOrUndefined (CertificateType), "RenewalSummary" :: NullOrUndefined (RenewalSummary), "KeyUsages" :: NullOrUndefined (KeyUsageList), "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList) } -> { "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "DomainValidationOptions" :: NullOrUndefined (DomainValidationList), "Serial" :: NullOrUndefined (String), "Subject" :: NullOrUndefined (String), "Issuer" :: NullOrUndefined (String), "CreatedAt" :: NullOrUndefined (TStamp), "IssuedAt" :: NullOrUndefined (TStamp), "ImportedAt" :: NullOrUndefined (TStamp), "Status" :: NullOrUndefined (CertificateStatus), "RevokedAt" :: NullOrUndefined (TStamp), "RevocationReason" :: NullOrUndefined (RevocationReason), "NotBefore" :: NullOrUndefined (TStamp), "NotAfter" :: NullOrUndefined (TStamp), "KeyAlgorithm" :: NullOrUndefined (KeyAlgorithm), "SignatureAlgorithm" :: NullOrUndefined (String), "InUseBy" :: NullOrUndefined (InUseList), "FailureReason" :: NullOrUndefined (FailureReason), "Type" :: NullOrUndefined (CertificateType), "RenewalSummary" :: NullOrUndefined (RenewalSummary), "KeyUsages" :: NullOrUndefined (KeyUsageList), "ExtendedKeyUsages" :: NullOrUndefined (ExtendedKeyUsageList) }) -> CertificateDetail
+newCertificateDetail' :: ({ "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString), "SubjectAlternativeNames" :: Maybe (DomainList), "DomainValidationOptions" :: Maybe (DomainValidationList), "Serial" :: Maybe (String), "Subject" :: Maybe (String), "Issuer" :: Maybe (String), "CreatedAt" :: Maybe (TStamp), "IssuedAt" :: Maybe (TStamp), "ImportedAt" :: Maybe (TStamp), "Status" :: Maybe (CertificateStatus), "RevokedAt" :: Maybe (TStamp), "RevocationReason" :: Maybe (RevocationReason), "NotBefore" :: Maybe (TStamp), "NotAfter" :: Maybe (TStamp), "KeyAlgorithm" :: Maybe (KeyAlgorithm), "SignatureAlgorithm" :: Maybe (String), "InUseBy" :: Maybe (InUseList), "FailureReason" :: Maybe (FailureReason), "Type" :: Maybe (CertificateType), "RenewalSummary" :: Maybe (RenewalSummary), "KeyUsages" :: Maybe (KeyUsageList), "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList) } -> { "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString), "SubjectAlternativeNames" :: Maybe (DomainList), "DomainValidationOptions" :: Maybe (DomainValidationList), "Serial" :: Maybe (String), "Subject" :: Maybe (String), "Issuer" :: Maybe (String), "CreatedAt" :: Maybe (TStamp), "IssuedAt" :: Maybe (TStamp), "ImportedAt" :: Maybe (TStamp), "Status" :: Maybe (CertificateStatus), "RevokedAt" :: Maybe (TStamp), "RevocationReason" :: Maybe (RevocationReason), "NotBefore" :: Maybe (TStamp), "NotAfter" :: Maybe (TStamp), "KeyAlgorithm" :: Maybe (KeyAlgorithm), "SignatureAlgorithm" :: Maybe (String), "InUseBy" :: Maybe (InUseList), "FailureReason" :: Maybe (FailureReason), "Type" :: Maybe (CertificateType), "RenewalSummary" :: Maybe (RenewalSummary), "KeyUsages" :: Maybe (KeyUsageList), "ExtendedKeyUsages" :: Maybe (ExtendedKeyUsageList) }) -> CertificateDetail
 ```
 
 Constructs CertificateDetail's fields from required parameters
@@ -188,7 +188,7 @@ Encode CertificateStatuses
 
 ``` purescript
 newtype CertificateSummary
-  = CertificateSummary { "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString) }
+  = CertificateSummary { "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString) }
 ```
 
 <p>This structure is returned in the response object of <a>ListCertificates</a> action. </p>
@@ -213,7 +213,7 @@ Constructs CertificateSummary from required parameters
 #### `newCertificateSummary'`
 
 ``` purescript
-newCertificateSummary' :: ({ "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString) } -> { "CertificateArn" :: NullOrUndefined (Arn), "DomainName" :: NullOrUndefined (DomainNameString) }) -> CertificateSummary
+newCertificateSummary' :: ({ "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString) } -> { "CertificateArn" :: Maybe (Arn), "DomainName" :: Maybe (DomainNameString) }) -> CertificateSummary
 ```
 
 Constructs CertificateSummary's fields from required parameters
@@ -318,7 +318,7 @@ Constructs DescribeCertificateRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeCertificateResponse
-  = DescribeCertificateResponse { "Certificate" :: NullOrUndefined (CertificateDetail) }
+  = DescribeCertificateResponse { "Certificate" :: Maybe (CertificateDetail) }
 ```
 
 ##### Instances
@@ -341,7 +341,7 @@ Constructs DescribeCertificateResponse from required parameters
 #### `newDescribeCertificateResponse'`
 
 ``` purescript
-newDescribeCertificateResponse' :: ({ "Certificate" :: NullOrUndefined (CertificateDetail) } -> { "Certificate" :: NullOrUndefined (CertificateDetail) }) -> DescribeCertificateResponse
+newDescribeCertificateResponse' :: ({ "Certificate" :: Maybe (CertificateDetail) } -> { "Certificate" :: Maybe (CertificateDetail) }) -> DescribeCertificateResponse
 ```
 
 Constructs DescribeCertificateResponse's fields from required parameters
@@ -398,7 +398,7 @@ Encode DomainStatus
 
 ``` purescript
 newtype DomainValidation
-  = DomainValidation { "DomainName" :: DomainNameString, "ValidationEmails" :: NullOrUndefined (ValidationEmailList), "ValidationDomain" :: NullOrUndefined (DomainNameString), "ValidationStatus" :: NullOrUndefined (DomainStatus), "ResourceRecord" :: NullOrUndefined (ResourceRecord), "ValidationMethod" :: NullOrUndefined (ValidationMethod) }
+  = DomainValidation { "DomainName" :: DomainNameString, "ValidationEmails" :: Maybe (ValidationEmailList), "ValidationDomain" :: Maybe (DomainNameString), "ValidationStatus" :: Maybe (DomainStatus), "ResourceRecord" :: Maybe (ResourceRecord), "ValidationMethod" :: Maybe (ValidationMethod) }
 ```
 
 <p>Contains information about the validation of each domain name in the certificate.</p>
@@ -423,7 +423,7 @@ Constructs DomainValidation from required parameters
 #### `newDomainValidation'`
 
 ``` purescript
-newDomainValidation' :: DomainNameString -> ({ "DomainName" :: DomainNameString, "ValidationEmails" :: NullOrUndefined (ValidationEmailList), "ValidationDomain" :: NullOrUndefined (DomainNameString), "ValidationStatus" :: NullOrUndefined (DomainStatus), "ResourceRecord" :: NullOrUndefined (ResourceRecord), "ValidationMethod" :: NullOrUndefined (ValidationMethod) } -> { "DomainName" :: DomainNameString, "ValidationEmails" :: NullOrUndefined (ValidationEmailList), "ValidationDomain" :: NullOrUndefined (DomainNameString), "ValidationStatus" :: NullOrUndefined (DomainStatus), "ResourceRecord" :: NullOrUndefined (ResourceRecord), "ValidationMethod" :: NullOrUndefined (ValidationMethod) }) -> DomainValidation
+newDomainValidation' :: DomainNameString -> ({ "DomainName" :: DomainNameString, "ValidationEmails" :: Maybe (ValidationEmailList), "ValidationDomain" :: Maybe (DomainNameString), "ValidationStatus" :: Maybe (DomainStatus), "ResourceRecord" :: Maybe (ResourceRecord), "ValidationMethod" :: Maybe (ValidationMethod) } -> { "DomainName" :: DomainNameString, "ValidationEmails" :: Maybe (ValidationEmailList), "ValidationDomain" :: Maybe (DomainNameString), "ValidationStatus" :: Maybe (DomainStatus), "ResourceRecord" :: Maybe (ResourceRecord), "ValidationMethod" :: Maybe (ValidationMethod) }) -> DomainValidation
 ```
 
 Constructs DomainValidation's fields from required parameters
@@ -498,7 +498,7 @@ Encode DomainValidationOptionList
 
 ``` purescript
 newtype ExtendedKeyUsage
-  = ExtendedKeyUsage { "Name" :: NullOrUndefined (ExtendedKeyUsageName), "OID" :: NullOrUndefined (String) }
+  = ExtendedKeyUsage { "Name" :: Maybe (ExtendedKeyUsageName), "OID" :: Maybe (String) }
 ```
 
 <p>The Extended Key Usage X.509 v3 extension defines one or more purposes for which the public key can be used. This is in addition to or in place of the basic purposes specified by the Key Usage extension. </p>
@@ -523,7 +523,7 @@ Constructs ExtendedKeyUsage from required parameters
 #### `newExtendedKeyUsage'`
 
 ``` purescript
-newExtendedKeyUsage' :: ({ "Name" :: NullOrUndefined (ExtendedKeyUsageName), "OID" :: NullOrUndefined (String) } -> { "Name" :: NullOrUndefined (ExtendedKeyUsageName), "OID" :: NullOrUndefined (String) }) -> ExtendedKeyUsage
+newExtendedKeyUsage' :: ({ "Name" :: Maybe (ExtendedKeyUsageName), "OID" :: Maybe (String) } -> { "Name" :: Maybe (ExtendedKeyUsageName), "OID" :: Maybe (String) }) -> ExtendedKeyUsage
 ```
 
 Constructs ExtendedKeyUsage's fields from required parameters
@@ -596,7 +596,7 @@ Encode FailureReason
 
 ``` purescript
 newtype Filters
-  = Filters { extendedKeyUsage :: NullOrUndefined (ExtendedKeyUsageFilterList), keyUsage :: NullOrUndefined (KeyUsageFilterList), keyTypes :: NullOrUndefined (KeyAlgorithmList) }
+  = Filters { extendedKeyUsage :: Maybe (ExtendedKeyUsageFilterList), keyUsage :: Maybe (KeyUsageFilterList), keyTypes :: Maybe (KeyAlgorithmList) }
 ```
 
 <p>This structure can be used in the <a>ListCertificates</a> action to filter the output of the certificate list. </p>
@@ -621,7 +621,7 @@ Constructs Filters from required parameters
 #### `newFilters'`
 
 ``` purescript
-newFilters' :: ({ extendedKeyUsage :: NullOrUndefined (ExtendedKeyUsageFilterList), keyUsage :: NullOrUndefined (KeyUsageFilterList), keyTypes :: NullOrUndefined (KeyAlgorithmList) } -> { extendedKeyUsage :: NullOrUndefined (ExtendedKeyUsageFilterList), keyUsage :: NullOrUndefined (KeyUsageFilterList), keyTypes :: NullOrUndefined (KeyAlgorithmList) }) -> Filters
+newFilters' :: ({ extendedKeyUsage :: Maybe (ExtendedKeyUsageFilterList), keyUsage :: Maybe (KeyUsageFilterList), keyTypes :: Maybe (KeyAlgorithmList) } -> { extendedKeyUsage :: Maybe (ExtendedKeyUsageFilterList), keyUsage :: Maybe (KeyUsageFilterList), keyTypes :: Maybe (KeyAlgorithmList) }) -> Filters
 ```
 
 Constructs Filters's fields from required parameters
@@ -662,7 +662,7 @@ Constructs GetCertificateRequest's fields from required parameters
 
 ``` purescript
 newtype GetCertificateResponse
-  = GetCertificateResponse { "Certificate" :: NullOrUndefined (CertificateBody), "CertificateChain" :: NullOrUndefined (CertificateChain) }
+  = GetCertificateResponse { "Certificate" :: Maybe (CertificateBody), "CertificateChain" :: Maybe (CertificateChain) }
 ```
 
 ##### Instances
@@ -685,7 +685,7 @@ Constructs GetCertificateResponse from required parameters
 #### `newGetCertificateResponse'`
 
 ``` purescript
-newGetCertificateResponse' :: ({ "Certificate" :: NullOrUndefined (CertificateBody), "CertificateChain" :: NullOrUndefined (CertificateChain) } -> { "Certificate" :: NullOrUndefined (CertificateBody), "CertificateChain" :: NullOrUndefined (CertificateChain) }) -> GetCertificateResponse
+newGetCertificateResponse' :: ({ "Certificate" :: Maybe (CertificateBody), "CertificateChain" :: Maybe (CertificateChain) } -> { "Certificate" :: Maybe (CertificateBody), "CertificateChain" :: Maybe (CertificateChain) }) -> GetCertificateResponse
 ```
 
 Constructs GetCertificateResponse's fields from required parameters
@@ -710,7 +710,7 @@ Encode IdempotencyToken
 
 ``` purescript
 newtype ImportCertificateRequest
-  = ImportCertificateRequest { "CertificateArn" :: NullOrUndefined (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: NullOrUndefined (CertificateChainBlob) }
+  = ImportCertificateRequest { "CertificateArn" :: Maybe (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: Maybe (CertificateChainBlob) }
 ```
 
 ##### Instances
@@ -733,7 +733,7 @@ Constructs ImportCertificateRequest from required parameters
 #### `newImportCertificateRequest'`
 
 ``` purescript
-newImportCertificateRequest' :: CertificateBodyBlob -> PrivateKeyBlob -> ({ "CertificateArn" :: NullOrUndefined (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: NullOrUndefined (CertificateChainBlob) } -> { "CertificateArn" :: NullOrUndefined (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: NullOrUndefined (CertificateChainBlob) }) -> ImportCertificateRequest
+newImportCertificateRequest' :: CertificateBodyBlob -> PrivateKeyBlob -> ({ "CertificateArn" :: Maybe (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: Maybe (CertificateChainBlob) } -> { "CertificateArn" :: Maybe (Arn), "Certificate" :: CertificateBodyBlob, "PrivateKey" :: PrivateKeyBlob, "CertificateChain" :: Maybe (CertificateChainBlob) }) -> ImportCertificateRequest
 ```
 
 Constructs ImportCertificateRequest's fields from required parameters
@@ -742,7 +742,7 @@ Constructs ImportCertificateRequest's fields from required parameters
 
 ``` purescript
 newtype ImportCertificateResponse
-  = ImportCertificateResponse { "CertificateArn" :: NullOrUndefined (Arn) }
+  = ImportCertificateResponse { "CertificateArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -765,7 +765,7 @@ Constructs ImportCertificateResponse from required parameters
 #### `newImportCertificateResponse'`
 
 ``` purescript
-newImportCertificateResponse' :: ({ "CertificateArn" :: NullOrUndefined (Arn) } -> { "CertificateArn" :: NullOrUndefined (Arn) }) -> ImportCertificateResponse
+newImportCertificateResponse' :: ({ "CertificateArn" :: Maybe (Arn) } -> { "CertificateArn" :: Maybe (Arn) }) -> ImportCertificateResponse
 ```
 
 Constructs ImportCertificateResponse's fields from required parameters
@@ -790,7 +790,7 @@ Encode InUseList
 
 ``` purescript
 newtype InvalidArnException
-  = InvalidArnException { message :: NullOrUndefined (String) }
+  = InvalidArnException { message :: Maybe (String) }
 ```
 
 <p>The requested Amazon Resource Name (ARN) does not refer to an existing resource.</p>
@@ -815,7 +815,7 @@ Constructs InvalidArnException from required parameters
 #### `newInvalidArnException'`
 
 ``` purescript
-newInvalidArnException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidArnException
+newInvalidArnException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidArnException
 ```
 
 Constructs InvalidArnException's fields from required parameters
@@ -824,7 +824,7 @@ Constructs InvalidArnException's fields from required parameters
 
 ``` purescript
 newtype InvalidDomainValidationOptionsException
-  = InvalidDomainValidationOptionsException { message :: NullOrUndefined (String) }
+  = InvalidDomainValidationOptionsException { message :: Maybe (String) }
 ```
 
 <p>One or more values in the <a>DomainValidationOption</a> structure is incorrect.</p>
@@ -849,7 +849,7 @@ Constructs InvalidDomainValidationOptionsException from required parameters
 #### `newInvalidDomainValidationOptionsException'`
 
 ``` purescript
-newInvalidDomainValidationOptionsException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidDomainValidationOptionsException
+newInvalidDomainValidationOptionsException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidDomainValidationOptionsException
 ```
 
 Constructs InvalidDomainValidationOptionsException's fields from required parameters
@@ -858,7 +858,7 @@ Constructs InvalidDomainValidationOptionsException's fields from required parame
 
 ``` purescript
 newtype InvalidStateException
-  = InvalidStateException { message :: NullOrUndefined (String) }
+  = InvalidStateException { message :: Maybe (String) }
 ```
 
 <p>Processing has reached an invalid state. For example, this exception can occur if the specified domain is not using email validation, or the current certificate status does not permit the requested operation. See the exception message returned by ACM to determine which state is not valid.</p>
@@ -883,7 +883,7 @@ Constructs InvalidStateException from required parameters
 #### `newInvalidStateException'`
 
 ``` purescript
-newInvalidStateException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidStateException
+newInvalidStateException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidStateException
 ```
 
 Constructs InvalidStateException's fields from required parameters
@@ -892,7 +892,7 @@ Constructs InvalidStateException's fields from required parameters
 
 ``` purescript
 newtype InvalidTagException
-  = InvalidTagException { message :: NullOrUndefined (String) }
+  = InvalidTagException { message :: Maybe (String) }
 ```
 
 <p>One or both of the values that make up the key-value pair is not valid. For example, you cannot specify a tag value that begins with <code>aws:</code>.</p>
@@ -917,7 +917,7 @@ Constructs InvalidTagException from required parameters
 #### `newInvalidTagException'`
 
 ``` purescript
-newInvalidTagException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> InvalidTagException
+newInvalidTagException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> InvalidTagException
 ```
 
 Constructs InvalidTagException's fields from required parameters
@@ -958,7 +958,7 @@ Encode KeyAlgorithmList
 
 ``` purescript
 newtype KeyUsage
-  = KeyUsage { "Name" :: NullOrUndefined (KeyUsageName) }
+  = KeyUsage { "Name" :: Maybe (KeyUsageName) }
 ```
 
 <p>The Key Usage X.509 v3 extension defines the purpose of the public key contained in the certificate.</p>
@@ -983,7 +983,7 @@ Constructs KeyUsage from required parameters
 #### `newKeyUsage'`
 
 ``` purescript
-newKeyUsage' :: ({ "Name" :: NullOrUndefined (KeyUsageName) } -> { "Name" :: NullOrUndefined (KeyUsageName) }) -> KeyUsage
+newKeyUsage' :: ({ "Name" :: Maybe (KeyUsageName) } -> { "Name" :: Maybe (KeyUsageName) }) -> KeyUsage
 ```
 
 Constructs KeyUsage's fields from required parameters
@@ -1040,7 +1040,7 @@ Encode KeyUsageName
 
 ``` purescript
 newtype LimitExceededException
-  = LimitExceededException { message :: NullOrUndefined (String) }
+  = LimitExceededException { message :: Maybe (String) }
 ```
 
 <p>An ACM limit has been exceeded. For example, you may have input more domains than are allowed or you've requested too many certificates for your account. See the exception message returned by ACM to determine which limit you have violated. For more information about ACM limits, see the <a href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a> topic.</p>
@@ -1065,7 +1065,7 @@ Constructs LimitExceededException from required parameters
 #### `newLimitExceededException'`
 
 ``` purescript
-newLimitExceededException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> LimitExceededException
+newLimitExceededException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> LimitExceededException
 ```
 
 Constructs LimitExceededException's fields from required parameters
@@ -1074,7 +1074,7 @@ Constructs LimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ListCertificatesRequest
-  = ListCertificatesRequest { "CertificateStatuses" :: NullOrUndefined (CertificateStatuses), "Includes" :: NullOrUndefined (Filters), "NextToken" :: NullOrUndefined (NextToken), "MaxItems" :: NullOrUndefined (MaxItems) }
+  = ListCertificatesRequest { "CertificateStatuses" :: Maybe (CertificateStatuses), "Includes" :: Maybe (Filters), "NextToken" :: Maybe (NextToken), "MaxItems" :: Maybe (MaxItems) }
 ```
 
 ##### Instances
@@ -1097,7 +1097,7 @@ Constructs ListCertificatesRequest from required parameters
 #### `newListCertificatesRequest'`
 
 ``` purescript
-newListCertificatesRequest' :: ({ "CertificateStatuses" :: NullOrUndefined (CertificateStatuses), "Includes" :: NullOrUndefined (Filters), "NextToken" :: NullOrUndefined (NextToken), "MaxItems" :: NullOrUndefined (MaxItems) } -> { "CertificateStatuses" :: NullOrUndefined (CertificateStatuses), "Includes" :: NullOrUndefined (Filters), "NextToken" :: NullOrUndefined (NextToken), "MaxItems" :: NullOrUndefined (MaxItems) }) -> ListCertificatesRequest
+newListCertificatesRequest' :: ({ "CertificateStatuses" :: Maybe (CertificateStatuses), "Includes" :: Maybe (Filters), "NextToken" :: Maybe (NextToken), "MaxItems" :: Maybe (MaxItems) } -> { "CertificateStatuses" :: Maybe (CertificateStatuses), "Includes" :: Maybe (Filters), "NextToken" :: Maybe (NextToken), "MaxItems" :: Maybe (MaxItems) }) -> ListCertificatesRequest
 ```
 
 Constructs ListCertificatesRequest's fields from required parameters
@@ -1106,7 +1106,7 @@ Constructs ListCertificatesRequest's fields from required parameters
 
 ``` purescript
 newtype ListCertificatesResponse
-  = ListCertificatesResponse { "NextToken" :: NullOrUndefined (NextToken), "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList) }
+  = ListCertificatesResponse { "NextToken" :: Maybe (NextToken), "CertificateSummaryList" :: Maybe (CertificateSummaryList) }
 ```
 
 ##### Instances
@@ -1129,7 +1129,7 @@ Constructs ListCertificatesResponse from required parameters
 #### `newListCertificatesResponse'`
 
 ``` purescript
-newListCertificatesResponse' :: ({ "NextToken" :: NullOrUndefined (NextToken), "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList) } -> { "NextToken" :: NullOrUndefined (NextToken), "CertificateSummaryList" :: NullOrUndefined (CertificateSummaryList) }) -> ListCertificatesResponse
+newListCertificatesResponse' :: ({ "NextToken" :: Maybe (NextToken), "CertificateSummaryList" :: Maybe (CertificateSummaryList) } -> { "NextToken" :: Maybe (NextToken), "CertificateSummaryList" :: Maybe (CertificateSummaryList) }) -> ListCertificatesResponse
 ```
 
 Constructs ListCertificatesResponse's fields from required parameters
@@ -1170,7 +1170,7 @@ Constructs ListTagsForCertificateRequest's fields from required parameters
 
 ``` purescript
 newtype ListTagsForCertificateResponse
-  = ListTagsForCertificateResponse { "Tags" :: NullOrUndefined (TagList) }
+  = ListTagsForCertificateResponse { "Tags" :: Maybe (TagList) }
 ```
 
 ##### Instances
@@ -1193,7 +1193,7 @@ Constructs ListTagsForCertificateResponse from required parameters
 #### `newListTagsForCertificateResponse'`
 
 ``` purescript
-newListTagsForCertificateResponse' :: ({ "Tags" :: NullOrUndefined (TagList) } -> { "Tags" :: NullOrUndefined (TagList) }) -> ListTagsForCertificateResponse
+newListTagsForCertificateResponse' :: ({ "Tags" :: Maybe (TagList) } -> { "Tags" :: Maybe (TagList) }) -> ListTagsForCertificateResponse
 ```
 
 Constructs ListTagsForCertificateResponse's fields from required parameters
@@ -1348,7 +1348,7 @@ Constructs RenewalSummary's fields from required parameters
 
 ``` purescript
 newtype RequestCertificateRequest
-  = RequestCertificateRequest { "DomainName" :: DomainNameString, "ValidationMethod" :: NullOrUndefined (ValidationMethod), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "IdempotencyToken" :: NullOrUndefined (IdempotencyToken), "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList) }
+  = RequestCertificateRequest { "DomainName" :: DomainNameString, "ValidationMethod" :: Maybe (ValidationMethod), "SubjectAlternativeNames" :: Maybe (DomainList), "IdempotencyToken" :: Maybe (IdempotencyToken), "DomainValidationOptions" :: Maybe (DomainValidationOptionList) }
 ```
 
 ##### Instances
@@ -1371,7 +1371,7 @@ Constructs RequestCertificateRequest from required parameters
 #### `newRequestCertificateRequest'`
 
 ``` purescript
-newRequestCertificateRequest' :: DomainNameString -> ({ "DomainName" :: DomainNameString, "ValidationMethod" :: NullOrUndefined (ValidationMethod), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "IdempotencyToken" :: NullOrUndefined (IdempotencyToken), "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList) } -> { "DomainName" :: DomainNameString, "ValidationMethod" :: NullOrUndefined (ValidationMethod), "SubjectAlternativeNames" :: NullOrUndefined (DomainList), "IdempotencyToken" :: NullOrUndefined (IdempotencyToken), "DomainValidationOptions" :: NullOrUndefined (DomainValidationOptionList) }) -> RequestCertificateRequest
+newRequestCertificateRequest' :: DomainNameString -> ({ "DomainName" :: DomainNameString, "ValidationMethod" :: Maybe (ValidationMethod), "SubjectAlternativeNames" :: Maybe (DomainList), "IdempotencyToken" :: Maybe (IdempotencyToken), "DomainValidationOptions" :: Maybe (DomainValidationOptionList) } -> { "DomainName" :: DomainNameString, "ValidationMethod" :: Maybe (ValidationMethod), "SubjectAlternativeNames" :: Maybe (DomainList), "IdempotencyToken" :: Maybe (IdempotencyToken), "DomainValidationOptions" :: Maybe (DomainValidationOptionList) }) -> RequestCertificateRequest
 ```
 
 Constructs RequestCertificateRequest's fields from required parameters
@@ -1380,7 +1380,7 @@ Constructs RequestCertificateRequest's fields from required parameters
 
 ``` purescript
 newtype RequestCertificateResponse
-  = RequestCertificateResponse { "CertificateArn" :: NullOrUndefined (Arn) }
+  = RequestCertificateResponse { "CertificateArn" :: Maybe (Arn) }
 ```
 
 ##### Instances
@@ -1403,7 +1403,7 @@ Constructs RequestCertificateResponse from required parameters
 #### `newRequestCertificateResponse'`
 
 ``` purescript
-newRequestCertificateResponse' :: ({ "CertificateArn" :: NullOrUndefined (Arn) } -> { "CertificateArn" :: NullOrUndefined (Arn) }) -> RequestCertificateResponse
+newRequestCertificateResponse' :: ({ "CertificateArn" :: Maybe (Arn) } -> { "CertificateArn" :: Maybe (Arn) }) -> RequestCertificateResponse
 ```
 
 Constructs RequestCertificateResponse's fields from required parameters
@@ -1412,7 +1412,7 @@ Constructs RequestCertificateResponse's fields from required parameters
 
 ``` purescript
 newtype RequestInProgressException
-  = RequestInProgressException { message :: NullOrUndefined (String) }
+  = RequestInProgressException { message :: Maybe (String) }
 ```
 
 <p>The certificate request is in process and the certificate in your account has not yet been issued.</p>
@@ -1437,7 +1437,7 @@ Constructs RequestInProgressException from required parameters
 #### `newRequestInProgressException'`
 
 ``` purescript
-newRequestInProgressException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> RequestInProgressException
+newRequestInProgressException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> RequestInProgressException
 ```
 
 Constructs RequestInProgressException's fields from required parameters
@@ -1478,7 +1478,7 @@ Constructs ResendValidationEmailRequest's fields from required parameters
 
 ``` purescript
 newtype ResourceInUseException
-  = ResourceInUseException { message :: NullOrUndefined (String) }
+  = ResourceInUseException { message :: Maybe (String) }
 ```
 
 <p>The certificate is in use by another AWS service in the caller's account. Remove the association and try again.</p>
@@ -1503,7 +1503,7 @@ Constructs ResourceInUseException from required parameters
 #### `newResourceInUseException'`
 
 ``` purescript
-newResourceInUseException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ResourceInUseException
+newResourceInUseException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ResourceInUseException
 ```
 
 Constructs ResourceInUseException's fields from required parameters
@@ -1512,7 +1512,7 @@ Constructs ResourceInUseException's fields from required parameters
 
 ``` purescript
 newtype ResourceNotFoundException
-  = ResourceNotFoundException { message :: NullOrUndefined (String) }
+  = ResourceNotFoundException { message :: Maybe (String) }
 ```
 
 <p>The specified certificate cannot be found in the caller's account, or the caller's account cannot be found.</p>
@@ -1537,7 +1537,7 @@ Constructs ResourceNotFoundException from required parameters
 #### `newResourceNotFoundException'`
 
 ``` purescript
-newResourceNotFoundException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> ResourceNotFoundException
+newResourceNotFoundException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> ResourceNotFoundException
 ```
 
 Constructs ResourceNotFoundException's fields from required parameters
@@ -1612,7 +1612,7 @@ Encode TStamp
 
 ``` purescript
 newtype Tag
-  = Tag { "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) }
+  = Tag { "Key" :: TagKey, "Value" :: Maybe (TagValue) }
 ```
 
 <p>A key-value pair that identifies or specifies metadata about an ACM resource.</p>
@@ -1637,7 +1637,7 @@ Constructs Tag from required parameters
 #### `newTag'`
 
 ``` purescript
-newTag' :: TagKey -> ({ "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) } -> { "Key" :: TagKey, "Value" :: NullOrUndefined (TagValue) }) -> Tag
+newTag' :: TagKey -> ({ "Key" :: TagKey, "Value" :: Maybe (TagValue) } -> { "Key" :: TagKey, "Value" :: Maybe (TagValue) }) -> Tag
 ```
 
 Constructs Tag's fields from required parameters
@@ -1694,7 +1694,7 @@ Encode TagValue
 
 ``` purescript
 newtype TooManyTagsException
-  = TooManyTagsException { message :: NullOrUndefined (String) }
+  = TooManyTagsException { message :: Maybe (String) }
 ```
 
 <p>The request contains too many tags. Try the request again with fewer tags.</p>
@@ -1719,7 +1719,7 @@ Constructs TooManyTagsException from required parameters
 #### `newTooManyTagsException'`
 
 ``` purescript
-newTooManyTagsException' :: ({ message :: NullOrUndefined (String) } -> { message :: NullOrUndefined (String) }) -> TooManyTagsException
+newTooManyTagsException' :: ({ message :: Maybe (String) } -> { message :: Maybe (String) }) -> TooManyTagsException
 ```
 
 Constructs TooManyTagsException's fields from required parameters
